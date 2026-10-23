@@ -1,0 +1,278 @@
+
+:root {
+  --bg: #071b36;
+  --panel: #0d294a;
+  --blue: #168bff;
+  --cyan: #72e3ff;
+  --white: #f3f8ff;
+  --muted: #a8bed7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 14px;
+  background:
+    radial-gradient(ellipse at top, #123e6b 0%, transparent 55%),
+    var(--bg);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.topbar,
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar {
+  margin-bottom: 22px;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--cyan);
+}
+
+.tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.panel {
+  padding: 26px 22px;
+  border: 1px solid #24527d;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #103052, #091e38);
+  box-shadow: 0 20px 60px #0004;
+  animation: appear .35s ease;
+}
+
+.intro {
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.symbol {
+  font-size: 54px;
+  color: var(--cyan);
+  text-shadow: 0 0 30px #168bff;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
+
+h1 {
+  margin: 14px 0;
+  font-size: clamp(30px, 8vw, 48px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+h1 span {
+  color: var(--cyan);
+}
+
+h2 {
+  font-size: clamp(20px, 5vw, 26px);
+  line-height: 1.45;
+  margin: 20px 0;
+}
+
+.description {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.info {
+  display: inline-block;
+  margin: 14px 0 22px;
+  padding: 10px 14px;
+  border: 1px solid #24527d;
+  border-radius: 30px;
+  color: var(--cyan);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.info span {
+  margin: 0 8px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #168bff, #48cfff);
+  color: #061a31;
+  font-weight: 800;
+  letter-spacing: .4px;
+  transition: transform .2s, filter .2s;
+}
+
+.primary-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.primary-btn:focus-visible,
+.answer:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.progress {
+  height: 6px;
+  margin: 14px 0 24px;
+  background: #24415e;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  width: 0;
+  height: 100%;
+  background: var(--cyan);
+  transition: width .3s;
+}
+
+.quiz-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.answers {
+  display: grid;
+  gap: 11px;
+}
+
+.answer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #315575;
+  border-radius: 12px;
+  background: #102d4d;
+  color: var(--white);
+  text-align: left;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.answer:hover:not(:disabled) {
+  border-color: var(--cyan);
+  background: #163b60;
+}
+
+.answer .letter {
+  flex: 0 0 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #20496e;
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+.answer.correct {
+  border-color: #42d99b;
+  background: #123f3b;
+}
+
+.answer.wrong {
+  border-color: #ff8b91;
+  background: #482b3a;
+}
+
+.answer:disabled {
+  cursor: default;
+}
+
+.feedback {
+  min-height: 25px;
+  line-height: 1.6;
+  color: var(--cyan);
+  font-size: 14px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.final-score {
+  margin: 20px 0;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--cyan);
+}
+
+footer {
+  padding: 20px 4px 0;
+  color: #7894b4;
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 14px 10px;
+  }
+
+  .panel {
+    padding: 22px 16px;
+  }
+
+  .tag {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  }
