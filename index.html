@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b36">
+  <title>Giải Mã 20/11</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="logo">✦ GM 20/11</div>
+      <span class="tag">SPECIAL EDITION</span>
+    </header>
+
+    <section id="intro" class="panel intro">
+      <div class="symbol">✧</div>
+      <p class="eyebrow">TRI ÂN NGƯỜI LÁI ĐÒ</p>
+      <h1>GIẢI MÃ <span>20/11</span></h1>
+      <p class="description">
+        Mỗi câu trả lời là một điều bạn biết thêm
+        về ngày Nhà giáo Việt Nam.
+      </p>
+      <div class="info">10 CÂU HỎI <span>•</span> 4 ĐÁP ÁN</div>
+      <button id="start-btn" class="primary-btn">
+        BẮT ĐẦU THỬ THÁCH →
+      </button>
+    </section>
+
+    <section id="quiz" class="panel hidden">
+      <div class="quiz-meta">
+        <span id="question-number">CÂU 1 / 10</span>
+        <span>ĐIỂM: <b id="score">0</b></span>
+      </div>
+
+      <div class="progress">
+        <div id="progress-bar"></div>
+      </div>
+
+      <p id="category" class="eyebrow">GIẢI MÃ KIẾN THỨC</p>
+      <h2 id="question-text"></h2>
+
+      <div id="answers" class="answers"></div>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <button id="next-btn" class="primary-btn hidden">
+        CÂU TIẾP THEO →
+      </button>
+    </section>
+
+    <section id="result" class="panel intro hidden">
+      <div class="symbol">✦</div>
+      <p class="eyebrow">THỬ THÁCH HOÀN TẤT</p>
+      <h1 id="result-title">XUẤT SẮC!</h1>
+      <p class="description">Điểm số của bạn</p>
+      <div id="final-score" class="final-score">0/10</div>
+      <p id="result-message" class="description"></p>
+      <button id="restart-btn" class="primary-btn">
+        CHƠI LẠI ↻
+      </button>
+    </section>
+
+    <footer>
+      <p>20/11 · TRI ÂN THẦY CÔ · LƯU GIỮ KỶ NIỆM</p>
+    </footer>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+  </html>
+  
